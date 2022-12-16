@@ -1,0 +1,60 @@
+.row{
+    padding: 20px;
+}
+
+div{
+    background-color: #dadad8;
+    text-align: center;
+}
+
+/*estilo de la foto de perfil*/
+@media (min-width: 576px){
+    #fotoperfil{
+        position: absolute;
+        width: 13%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px #606d80;
+        left: 3%;
+        top: 200px;
+    }
+}
+
+@media (max-width: 575px){
+    #fotoperfil{
+        position: absolute;
+        width: 20%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px #606d80;
+        left: 39%;
+        top: 450px;
+    }
+}
+
+@media (max-width: 420px){
+    #fotoperfil{
+        position: absolute;
+        width: 24%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px #606d80;
+        left: 38%;
+        top: 430px;
+    }
+}
+
+@media (max-width: 342px){
+    #fotoperfil{
+        position: absolute;
+        width: 23%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px #606d80;
+        left: 39%;
+        top: 430px;
+    }
+}
+
+
+/*etiqueta nombre*/
+#nombre{
+    font-weight: bold;
+    margin-top: 30%;
+}
