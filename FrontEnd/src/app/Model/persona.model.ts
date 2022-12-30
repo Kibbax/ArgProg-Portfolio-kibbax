@@ -1,3 +1,5 @@
+import { NumberFormatStyle } from "@angular/common";
+
 export class persona{
     id?: number;
     nombre: string;

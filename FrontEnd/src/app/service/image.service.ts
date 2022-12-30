@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage, ref, uploadBytes, list, getDownloadURL } from '@angular/fire/storage';
+import { async } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ url: string = "";
         console.log("La URL es: " + this.url);
       }
     })
-    .catch(error => console.log(error))
+    .catch(error => console.log(error));
     
   }
 

@@ -11,11 +11,10 @@ import { TokenService } from 'src/app/service/token.service';
 export class AcercaDeComponent implements OnInit {
   persona: persona = null;
 
-  constructor(public personaService: PersonaService, 
+  constructor(public personaService: PersonaService,
               private tokenService: TokenService) { }
-              
-  isLogged = false;
 
+  isLogged = false;
   ngOnInit(): void {
     this.cargarPersona();
     if(this.tokenService.getToken()){
@@ -28,7 +27,7 @@ export class AcercaDeComponent implements OnInit {
   cargarPersona(){
     this.personaService.detail(1).subscribe(
       data => {
-        this.persona = data;
+        this.persona = data
       }
     )
   }
