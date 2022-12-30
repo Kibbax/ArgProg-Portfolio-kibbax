@@ -12,11 +12,12 @@ export class AcercaDeComponent implements OnInit {
   persona: persona = null;
 
   constructor(public personaService: PersonaService, 
-    private tokenService: TokenService) { }
+              private tokenService: TokenService) { }
+              
   isLogged = false;
 
   ngOnInit(): void {
-    this.cargarPrsona();
+    this.cargarPersona();
     if(this.tokenService.getToken()){
       this.isLogged = true;
     } else{
@@ -24,10 +25,10 @@ export class AcercaDeComponent implements OnInit {
     }
   }
 
-  cargarPrsona(){
+  cargarPersona(){
     this.personaService.detail(1).subscribe(
       data => {
-        this.persona = data
+        this.persona = data;
       }
     )
   }

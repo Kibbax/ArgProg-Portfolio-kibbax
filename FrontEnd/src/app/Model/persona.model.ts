@@ -1,10 +1,8 @@
-import { NumberFormatStyle } from "@angular/common";
-
 export class persona{
     id?: number;
     nombre: string;
     apellido: string;
-    descripcion: string
+    descripcion: string;
     img: string;
 
     constructor(nombre: string, apellido: string, descripcion: string, img: string) {
