@@ -18,7 +18,7 @@ export class EditacercadeComponent implements OnInit {
               private activatedRouter: ActivatedRoute, 
               private router: Router,
               public imageService: ImageService) { }
-
+  
   ngOnInit(): void {
   const id = this.activatedRouter.snapshot.params['id'];
         this.personaService.detail(id).subscribe(
