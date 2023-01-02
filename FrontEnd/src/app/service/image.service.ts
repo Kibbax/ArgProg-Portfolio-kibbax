@@ -11,17 +11,20 @@ url: string = "";
   constructor(private storage: Storage) { }
 
   public uploadImage($event:any, name: string){
-    const file = $event.target.file[0]
-    const imgRef = ref(this.storage, `imagen/` + name)
+    const file = $event.target.files[0]
+    const imgRef = ref(this.storage, `imagen/${file.name}`)
 
     uploadBytes(imgRef, file)
     .then(response => {this.getImages()})
-    .catch(error => console.log(error))
-    
+    .catch(error => console.log(error)
+    )
+       
     
   }
 
   getImages() { 
+    this.url = "";
+    
     const imagesRef = ref(this.storage, 'imagen')
     list(imagesRef)
     .then(async response => {
@@ -30,7 +33,7 @@ url: string = "";
         console.log("La URL es: " + this.url);
       }
     })
-    .catch(error => console.log(error));
+    .catch(error => console.log(error))
     
   }
 

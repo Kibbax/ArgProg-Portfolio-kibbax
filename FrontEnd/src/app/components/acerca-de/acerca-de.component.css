@@ -10,12 +10,18 @@ div{
 /*estilo de la foto de perfil*/
 @media (min-width: 576px){
     #fotoperfil{
-        position: absolute;
-        width: 13%;
+        /*position: absolute;
+        width: 13%;*/
         border-radius: 100%;
         box-shadow: 3px 3px 3px #606d80;
-        left: 3%;
-        top: 200px;
+        /*left: 3%;
+        top: 200px;*/
+    }
+
+    .biodescripcion{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
