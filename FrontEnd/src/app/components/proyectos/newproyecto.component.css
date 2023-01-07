@@ -1,0 +1,26 @@
+.container {
+    margin: 5%;
+    text-align: center;
+    padding: 10px;
+    border: 5px solid rgb(116, 106, 106);   
+}
+.btn {
+    margin-top: 3%;
+}
+form {
+    display: inline;
+    margin-top: 3%;
+    /*font-family: 'Arima Madurai', cursive;*/
+    text-align: center;
+}
+
+.container {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    }
