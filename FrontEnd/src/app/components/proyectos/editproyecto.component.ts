@@ -13,10 +13,10 @@ export class EditproyectoComponent implements OnInit{
   
   proyecto: Proyecto = null;
   
-  constructor( private activateRouter: ActivatedRoute,
-    private proyectoService: ProyectoService,
-    private router: Router,
-    public imageService: ImageServiceProyects){ }
+  constructor(private activateRouter: ActivatedRoute,
+              private proyectoService: ProyectoService,
+              private router: Router,
+              public imageService: ImageServiceProyects){ }
 
 
 

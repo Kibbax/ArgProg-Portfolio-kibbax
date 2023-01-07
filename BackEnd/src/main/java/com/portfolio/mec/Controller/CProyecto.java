@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("proyecto")
+@RequestMapping("/proyecto")
 public class CProyecto {
 
     @Autowired
@@ -60,7 +60,7 @@ public class CProyecto {
             return new ResponseEntity<>(new Mensaje("Este proyecto existe"), HttpStatus.BAD_REQUEST);
         }
 
-        Proyecto proyecto = new Proyecto(dtoproyecto.getNombre(), dtoproyecto.getDescription(), dtoproyecto.getImg(), dtoproyecto.getUrl_imagen());
+        Proyecto proyecto = new Proyecto(dtoproyecto.getNombre(), dtoproyecto.getDescripcion(), dtoproyecto.getImg(), dtoproyecto.getUrl_imagen());
         sProyecto.save(proyecto);
 
         return new ResponseEntity(new Mensaje("Proyecto agregado"), HttpStatus.OK);
@@ -73,19 +73,19 @@ public class CProyecto {
             return new ResponseEntity(new Mensaje("El id del proyecto no existe"), HttpStatus.BAD_REQUEST);
         }
         if (sProyecto.existsByNombre(dtoproyecto.getNombre()) && sProyecto.getByNombre(dtoproyecto.getNombre()).get().getId() != id) {
-            return new ResponseEntity(new Mensaje("Esa Persona ya existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Ese proyecto ya existe"), HttpStatus.BAD_REQUEST);
         }
         if (StringUtils.isBlank(dtoproyecto.getNombre())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         Proyecto proyecto = sProyecto.getOne(id).get();
         proyecto.setNombre(dtoproyecto.getNombre());
-        proyecto.setDescripcion(dtoproyecto.getDescription());
+        proyecto.setDescripcion(dtoproyecto.getDescripcion());
         proyecto.setImg(dtoproyecto.getImg());
         proyecto.setUrl_imagen(dtoproyecto.getUrl_imagen());
 
         sProyecto.save(proyecto);
-        return new ResponseEntity(new Mensaje("Persona actualizada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Proyecto actualizado"), HttpStatus.OK);
     }
 
 }

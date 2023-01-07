@@ -9,6 +9,8 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
   templateUrl: './newproyecto.component.html',
   styleUrls: ['./newproyecto.component.css']
 })
+
+
 export class NewproyectoComponent implements OnInit{
   nombre: string;
   descripcion: string;
@@ -21,19 +23,7 @@ export class NewproyectoComponent implements OnInit{
               public imageService: ImageServiceProyects){}
 
   ngOnInit(): void {
-    const save = this.img = this.imageService.url
-    console.log(save)
-    const proyecto = new Proyecto(this.nombre, this.descripcion, save, this.url_imagen);
-    this.proyectoService.save(proyecto).subscribe({
-      next: (_data) => {
-        alert('Proyecto agregado');
-        this.router.navigate(['']);
-      },
-      error: () => {
-        alert('Falló al cargar');
-        this.router.navigate(['']);
-      }
-    });
+    
   }
 
   onCreate(): void {

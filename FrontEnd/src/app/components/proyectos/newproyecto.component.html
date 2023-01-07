@@ -23,8 +23,8 @@
                         (change)="uploadImage($event)" accept=".jpg, .jpeg, .png">
                     <br />
                     <img id="blah"
-                        [src]="imageService?.url || 'https://images.vexels.com/media/users/3/131734/isolated/preview/05d86a9b63d1930d6298b27081ddc345-photo-preview-frame-icon.png' "
-                        alt="your image" />
+                        [src]="imageService?.url"
+                        alt="" />
                 </div>
 
                 <button (click)="onCreate()" class="btn btn-primary" >

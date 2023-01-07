@@ -8,7 +8,7 @@ export class ImageServiceProyects {
 
   constructor(private storage: Storage) { }
 
-  public uploadImage($event: any) {
+  public uploadImage($event: any) { 
     const file = $event.target.files[0];
     console.log(file);
     const imgRef = ref(this.storage, `imagen-Proyects/${file.name}`)
