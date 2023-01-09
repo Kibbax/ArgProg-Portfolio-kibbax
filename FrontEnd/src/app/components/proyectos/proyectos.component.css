@@ -1,14 +1,17 @@
 .row{
     padding: 20px;
     background-color: #dadad8;
+    
 }
 .contenedor{
     width: auto;
 }
-.parte1, .parte2{
+.tarjetaProyecto{
     display: inline-block;
     text-align: justify;
 }
-.img-proyecto{
+.fotoproyecto{
+   
     box-shadow: 10px 10px 30px #000000;
 }
+

@@ -1,32 +1,63 @@
 <div class="row">
-  <h1 class="text-white">Proyectos Realizados</h1>
+  <h1>Proyectos Realizados</h1>
   <div class="col-lg-2">
-      <button type="button" class="btn btn-light" routerLink="newproyecto" *ngIf="isLogged">
+      <button type="button" class="btn btn-dark" routerLink="newproyecto" *ngIf="isLogged">
           Nuevo Proyecto
       </button>
   </div>
+  <br>
   <table class="table">
       <tbody>
-          <tr *ngFor="let proyecto of proyecto">
-              <td class="text-white">
+          <tr class="tarjetaProyecto" *ngFor="let proyecto of proyecto">
+              
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <a href={{proyecto.url_imagen}} target="_blank"><img [src]='proyecto?.img'  alt="" class="img-fluid rounded-start" id="fotoproyecto" /></a>
+                    
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{proyecto?.nombre}}</h5>
+                      <p class="card-text">{{proyecto?.descripcion}}</p>
+                      <p class="card-text"><small class="text-muted">{{proyecto.url_imagen}}</small></p>
+                    </div>
+                    <div>
+                        <td class="text-white" *ngIf="isLogged">
+                            <button class="btn btn-success" routerLink="/editproyecto/{{proyecto.id}}">
+                                <i class="bi bi-pencil-square"></i> Editar
+                            </button>
+                        </td>
+                        <td class="text-white" *ngIf="isLogged">
+                            <button class="btn btn-danger" (click)="delete(proyecto.id)">
+                            <i class="bi bi-trash-fill"></i> Borrar
+                            </button>
+                        </td>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            
+            <!-- <td class="">
                   <h3>{{proyecto?.nombre}}</h3>
               </td>
-              <td class="text-white">
+              <td class="">
                   {{proyecto?.descripcion}}
-              </td>
+              </td> 
               <td>
                  <a href={{proyecto.url_imagen}} target="_blank"><img [src]='proyecto?.img'  alt="" class="img-fluid" id="fotoproyecto" /></a>
-              </td>
-              <td class="text-white" *ngIf="isLogged">
-                  <button class="btn btn-light" routerLink="/editproyecto/{{proyecto.id}}">
-                      <i class="bi bi-pencil"></i> Editar
+              </td> -->
+              <!-- <td class="text-white" *ngIf="isLogged">
+                  <button class="btn btn-success" routerLink="/editproyecto/{{proyecto.id}}">
+                      <i class="bi bi-pencil-square"></i> Editar
                   </button>
               </td>
               <td class="text-white" *ngIf="isLogged">
                   <button class="btn btn-danger" (click)="delete(proyecto.id)">
                   <i class="bi bi-trash-fill"></i> Borrar
                   </button>
-              </td>
+              </td> -->
           </tr>
       </tbody>
   </table>
