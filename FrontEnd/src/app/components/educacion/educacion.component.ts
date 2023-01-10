@@ -32,15 +32,33 @@ export class EducacionComponent implements OnInit{
     )
   }
 
-  delete(id?: number){
-    if(id != undefined){
-      this.educacionS.delete(id).subscribe(
-        data => {
-          this.cargarEducacion();
-        }, err => {
-          alert("No se pudo eliminar")
-        }
-      )
+  // delete(id?: number){
+  //   if(id != undefined){
+  //     this.educacionS.delete(id).subscribe(
+  //       data => {
+  //         this.cargarEducacion();
+  //       }, err => {
+  //         alert("No se pudo eliminar")
+  //       }
+  //     )
+  //   }
+  // }
+
+  delete(id?: number) {
+    if (id != undefined) {
+      let respuesta = confirm("Estas seguro que quieres eliminar?")
+      if (respuesta == true) {
+        this.educacionS.delete(id).subscribe(
+          data => {
+            this.cargarEducacion();
+            alert("Educación Borrada")
+          }, err => {
+            alert("No se pudo borrar la Educación");
+          }
+        )
+      } else {
+        alert("No se borro la Educación");
+      }
     }
   }
 

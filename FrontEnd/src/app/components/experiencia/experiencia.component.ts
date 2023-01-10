@@ -29,15 +29,33 @@ export class ExperienciaComponent {
     this.sExperiencia.lista().subscribe(data => {this.expe = data;})
   }
   
-  delete(id?: number){
-    if(id != undefined){
-      this.sExperiencia.delete(id).subscribe(
-        data => {
-          this.cargarExperiencia();
-        }, err => {
-          alert("No se pudo borrar la experiencia");
-        }
-      )
+  // delete(id?: number){
+  //   if(id != undefined){
+  //     this.sExperiencia.delete(id).subscribe(
+  //       data => {
+  //         this.cargarExperiencia();
+  //       }, err => {
+  //         alert("No se pudo borrar la experiencia");
+  //       }
+  //     )
+  //   }
+  // }
+
+  delete(id?: number) {
+    if (id != undefined) {
+      let respuesta = confirm("Estas seguro que quieres eliminar?")
+      if (respuesta == true) {
+        this.sExperiencia.delete(id).subscribe(
+          data => {
+            this.cargarExperiencia();
+            alert("Experiencia Laboral Borrada")
+          }, err => {
+            alert("No se pudo borrar la Experiencia Laboral");
+          }
+        )
+      } else {
+        alert("No se borro la Experiencia Laboral");
+      }
     }
   }
 
